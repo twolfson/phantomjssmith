@@ -31,5 +31,8 @@
   "devDependencies": {
     "grunt": "~0.3.17"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "obj-extend": "~0.1.0"
+  }
 }
