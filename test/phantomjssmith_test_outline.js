@@ -1,7 +1,12 @@
 {
   'phantomjssmith': {
-    'can interpret an image file': true,
-    'can gather statistics on an image file': true,
-    'can layout images onto a canvas': true
+    'interpretting an image file': {
+      'gathers statistics on an image file': true
+    },
+    'parsing many image files': {
+      'rendering them into a canvas': {
+        'can output an image': true
+      }
+    }
   }
 }
