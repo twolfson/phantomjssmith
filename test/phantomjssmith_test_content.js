@@ -31,14 +31,37 @@ module.exports = {
       path.join(imageDir, 'sprite2.jpg'),
       path.join(imageDir, 'sprite3.png')
     ];
+    this.width = 100;
+    this.height = 300;
+    this.coordinateArr = [{
+        "x": 0,
+        "y": 0
+    }, {
+        "x": 0,
+        "y": 50
+    }, {
+        "x": 0,
+        "y": 100
+    }];
   },
   'interpretting a ridiculous amount of images': function () {
     // Create and save an array of 500 images
     var images = [],
+        coordinateArr = [],
         imagePath = path.join(imageDir, '16.jpg'),
-        i = 500;
-    while (i--) { images.push(imagePath); }
+        i = 0,
+        len = 500;
+    for (; i < len; i++) {
+      images.push(imagePath);
+      coordinateArr.push({
+        x: 0,
+        y: i * 16
+      });
+    }
     this.images = images;
+    this.width = 16;
+    this.height = 16 * 500;
+    this.coordinateArr = coordinateArr;
   },
   // TODO: Totally can flatten this out with doubleshot ;)
   'rendering them into a canvas': function (done) {
@@ -48,21 +71,12 @@ module.exports = {
       if (err) { return done(err); }
 
       // Otherwise, draw them onto a canvas
-      smith.createCanvas(100, 300, function (err, canvas) {
+      smith.createCanvas(that.height, that.width, function (err, canvas) {
         // If there is an error, callback with it
         if (err) { return done(err); }
 
         // Add each image
-        var coordinatesArr = [{
-                "x": 0,
-                "y": 0,
-            }, {
-                "x": 0,
-                "y": 50,
-            }, {
-                "x": 0,
-                "y": 100,
-            }];
+        var coordinatesArr = that.coordinateArr;
         imgs.forEach(function (img, i) {
           var coordinates = coordinatesArr[i];
           canvas.addImage(img, coordinates.x, coordinates.y);
@@ -92,6 +106,8 @@ module.exports = {
         matchesAnImage = actualImage === expectedImage;
       }
     });
+
+    console.log(actualImage);
 
     expect(matchesAnImage).to.equal(true);
   },
