@@ -37,8 +37,6 @@ module.exports = {
         "x": 0,
         "y": 100
     }];
-    var expectedDir = __dirname + '/expected_files/';
-    this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
   },
   'interpretting a ridiculous amount of images': function () {
     // Create and save an array of 500 images
@@ -90,7 +88,6 @@ module.exports = {
   'can output an image':  function () {
     // Assert the actual image is the same expected
     var actualImage = this.result,
-        namespace = 'topDown.',
         matchesAnImage = false;
 
     // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
