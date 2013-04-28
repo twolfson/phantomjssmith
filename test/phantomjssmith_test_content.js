@@ -71,7 +71,7 @@ module.exports = {
       if (err) { return done(err); }
 
       // Otherwise, draw them onto a canvas
-      smith.createCanvas(that.height, that.width, function (err, canvas) {
+      smith.createCanvas(that.width, that.height, function (err, canvas) {
         // If there is an error, callback with it
         if (err) { return done(err); }
 
@@ -106,8 +106,6 @@ module.exports = {
         matchesAnImage = actualImage === expectedImage;
       }
     });
-
-    console.log(actualImage);
 
     expect(matchesAnImage).to.equal(true);
   },
