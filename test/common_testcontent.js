@@ -1,17 +1,14 @@
-// TODO: We could use inversion of control for a common testing module.
-// This would allow for common test images, content, and isolation of those images to a `devDependency`
 var fs = require('fs'),
     path = require('path'),
     async = require('async'),
     expect = require('chai').expect,
-    smith = require('../lib/phantomjssmith'),
     imageDir = path.join(__dirname, 'test_sprites');
 module.exports = {
   'interpretting an image file': function (done) {
     // Create an image and save it for later
     var filepath = __dirname + '/test_sprites/sprite1.png',
         that = this;
-    smith.createImages([filepath], function (err, imgs) {
+    this.smith.createImages([filepath], function (err, imgs) {
       // Fallback images, save image, and callback
       imgs = imgs || [];
       that.img = imgs[0];
@@ -40,6 +37,8 @@ module.exports = {
         "x": 0,
         "y": 100
     }];
+    var expectedDir = __dirname + '/expected_files/';
+    this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
   },
   'interpretting a ridiculous amount of images': function () {
     // Create and save an array of 500 images
@@ -62,7 +61,8 @@ module.exports = {
   },
   // TODO: Totally can flatten this out with doubleshot ;)
   'rendering them into a canvas': function (done) {
-    var that = this;
+    var that = this,
+        smith = this.smith;
     smith.createImages(this.images, function handleImages (err, imgs) {
       // If there is an error, callback with it
       if (err) { return done(err); }
@@ -90,16 +90,13 @@ module.exports = {
   'can output an image':  function () {
     // Assert the actual image is the same expected
     var actualImage = this.result,
-        expectedFilenames = ['phantomjs.png', 'phantomjs2.png'],
-        expectedDir = __dirname + '/expected_files/',
         namespace = 'topDown.',
         matchesAnImage = false;
 
     // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
-    expectedFilenames.forEach(function testAgainstExpected (filename) {
+    this.expectedFilepaths.forEach(function testAgainstExpected (filepath) {
       if (!matchesAnImage) {
-        var filepath = path.join(expectedDir, namespace + filename),
-            expectedImage = fs.readFileSync(filepath, 'binary');
+        var expectedImage = fs.readFileSync(filepath, 'binary');
         matchesAnImage = actualImage === expectedImage;
       }
     });

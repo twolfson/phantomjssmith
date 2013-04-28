@@ -10,7 +10,7 @@ var fs = require('fs'),
     commonTest = require('./common_testcontent');
 module.exports = extend({}, commonTest, {
   'phantomjssmith': function () {
-    // Do nothing
+    this.smith = smith;
   }
 });
 //   'interpretting an image file': function (done) {
