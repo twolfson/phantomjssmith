@@ -18,7 +18,8 @@ module.exports = {
     });
   },
   'gathers statistics on an image file':  function () {
-    expect(this.img).to.deep.equal({height: 50, width: 50});
+    expect(this.img).to.have.property('height', 50);
+    expect(this.img).to.have.property('width', 50);
   },
   'parsing multiple images': function () {
     var imageDir = path.join(__dirname, 'test_sprites');
@@ -30,15 +31,12 @@ module.exports = {
   },
   'rendering them into a canvas': function (done) {
     var that = this;
-    console.log('hey');
     async.map(this.images, smith.createImage, function handleImages (err, imgs) {
       // If there is an error, callback with it
-      console.log('there');
       if (err) { return done(err); }
 
       // Otherwise, draw them onto a canvas
       smith.createCanvas(300, 100, function (err, canvas) {
-        console.log('hows');
         // If there is an error, callback with it
         if (err) { return done(err); }
 
@@ -53,7 +51,6 @@ module.exports = {
                 "x": 0,
                 "y": 100,
             }];
-            console.log('it');
         // TODO: We might have found a leak in the exporter if they require filename -_-
         // TODO: Stop spending so much time on this -- worst case, mark it as an GitHub issue and get back to being productive
         imgs.forEach(function (img, i) {
