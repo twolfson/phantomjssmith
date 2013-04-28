@@ -1,6 +1,7 @@
 // TODO: We could use inversion of control for a common testing module.
 // This would allow for common test images, content, and isolation of those images to a `devDependency`
-var path = require('path'),
+var fs = require('fs'),
+    path = require('path'),
     async = require('async'),
     expect = require('chai').expect,
     smith = require('../lib/phantomjssmith');
@@ -29,6 +30,7 @@ module.exports = {
       path.join(imageDir, 'sprite3.png')
     ];
   },
+  // TODO: Totally can flatten this out with doubleshot ;)
   'rendering them into a canvas': function (done) {
     var that = this;
     async.map(this.images, smith.createImage, function handleImages (err, imgs) {
@@ -36,7 +38,7 @@ module.exports = {
       if (err) { return done(err); }
 
       // Otherwise, draw them onto a canvas
-      smith.createCanvas(300, 100, function (err, canvas) {
+      smith.createCanvas(100, 300, function (err, canvas) {
         // If there is an error, callback with it
         if (err) { return done(err); }
 
@@ -51,18 +53,13 @@ module.exports = {
                 "x": 0,
                 "y": 100,
             }];
-        // TODO: We might have found a leak in the exporter if they require filename -_-
-        // TODO: Stop spending so much time on this -- worst case, mark it as an GitHub issue and get back to being productive
         imgs.forEach(function (img, i) {
           var coordinates = coordinatesArr[i];
           canvas.addImage(img, coordinates.x, coordinates.y);
         }, canvas);
-        console.log('going');
 
-        console.log('going');
         // Export canvas
         canvas['export']({format: 'png'}, function (err, result) {
-          console.log('whee');
           that.result = result;
           done(err);
         });
@@ -70,6 +67,22 @@ module.exports = {
     });
   },
   'can output an image':  function () {
-    console.log(this.result);
+    // Assert the actual image is the same expected
+    var actualImage = this.result,
+        expectedFilenames = ['phantomjs.png', 'phantomjs2.png'],
+        expectedDir = __dirname + '/expected_files/',
+        namespace = 'topDown.',
+        matchesAnImage = false;
+
+    // ANTI-PATTERN: Looping over set without identifiable lines for stack traces
+    expectedFilenames.forEach(function testAgainstExpected (filename) {
+      if (!matchesAnImage) {
+        var filepath = path.join(expectedDir, namespace + filename),
+            expectedImage = fs.readFileSync(filepath, 'binary');
+        matchesAnImage = actualImage === expectedImage;
+      }
+    });
+
+    expect(matchesAnImage).to.equal(true);
   }
 };
