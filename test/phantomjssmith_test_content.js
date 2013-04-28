@@ -1,6 +1,6 @@
 var smith = require('../lib/phantomjssmith'),
     extend = require('obj-extend'),
-    commonTest = require('./common_testcontent');
+    commonTest = require('spritesmith-engine-test').content;
 module.exports = extend({}, commonTest, {
   'phantomjssmith': function () {
     this.smith = smith;
