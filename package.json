@@ -26,13 +26,21 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": ""
+    "test": "doubleshot"
+  },
+  "dependencies": {
+    "obj-extend": "~0.1.0",
+    "temporary": "0.0.5",
+    "async": "~0.2.7"
   },
   "devDependencies": {
-    "grunt": "~0.3.17"
+    "grunt": "~0.3.17",
+    "doubleshot": "~1.0.2"
   },
-  "keywords": [],
-  "dependencies": {
-    "obj-extend": "~0.1.0"
-  }
+  "keywords": [
+    "phantomjs",
+    "spritesmith",
+    "image",
+    "layout"
+  ]
 }
