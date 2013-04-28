@@ -9,6 +9,12 @@ module.exports = {
       'rendering them into a canvas': {
         'can output an image': true
       }
+    },
+    'interpretting a ridiculous amount of images': {
+      'rendering them into a canvas': {
+        'does not crash': true,
+        'returns an image': true
+      }
     }
   }
 };
