@@ -9,14 +9,14 @@
 This depends on having `phantomjs` installed on your machine. For installation instructions, visit [the website][phantomjs]. This module has been tested against `1.9.0`.
 
 ## Getting Started
-Install the module with: `npm install gmsmith`
+Install the module with: `npm install phantomjssmith`
 
 ```javascript
-// Convert images into gmsmith objects
+// Convert images into phantomjssmith objects
 var images = ['img1.jpg', 'img2.png'];
-gmsmith.createImages(this.images, function handleImages (err, imgs) {
+phantomjssmith.createImages(this.images, function handleImages (err, imgs) {
   // Create a canvas to draw onto (200 pixels wide, 300 pixels tall)
-  gmsmith.createCanvas(200, 200, function (err, canvas) {
+  phantomjssmith.createCanvas(200, 200, function (err, canvas) {
     // Add each image at a specific location (upper left corner = {x, y})
     var coordinatesArr = [{x: 0, y: 0}, {x: 50, y: 50}];
     imgs.forEach(function (img, i) {
