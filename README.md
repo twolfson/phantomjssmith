@@ -1,4 +1,4 @@
-# phantomjssmith
+# phantomjssmith [![Donate on Gittip](http://badgr.co/gittip/twolfson.png)](https://www.gittip.com/twolfson/)
 
 [PhantomJS][phantomjs] engine for [spritesmith][spritesmith].
 
