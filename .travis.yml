@@ -5,7 +5,7 @@ node_js:
   - "0.8"
 env:
   - PHANTOMJS_VERSION="1.9.1"
-  - PHANTOMJS_VERSION="1.9.2"
+  - PHANTOMJS_VERSION="latest"
 install:
   # Set up PhantomJS version
   - ./test/setup.sh
