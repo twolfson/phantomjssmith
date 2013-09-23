@@ -8,7 +8,7 @@ env:
   - PHANTOMJS_VERSION="latest"
 install:
   # Set up PhantomJS version
-  - ./test/setup.sh
+  - ./test/install.sh
 
   # Install dependencies
   - npm install
