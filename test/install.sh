@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # If we are installing PhantomJS@1.9.2
-if [[ "$PHANTOMJS_VERSION" == "1.9.2." ]]; then
+if [[ "$PHANTOMJS_VERSION" == "1.9.2" ]]; then
   # Uninstall current version
   sudo apt-get uninstall phantomjs -y
 
