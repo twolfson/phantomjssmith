@@ -3,7 +3,7 @@
 # If we are installing PhantomJS@1.9.2
 if [[ "$PHANTOMJS_VERSION" == "1.9.2" ]]; then
   # Uninstall current version
-  sudo apt-get uninstall phantomjs -y
+  sudo apt-get remove phantomjs -y
 
   # Download and install 1.9.2 from website
   wget "https://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-x86_64.tar.bz2"
