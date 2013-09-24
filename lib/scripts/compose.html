@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Compose images</title>
-    <script src="nimble.min.js"></script>
+    <script src="async.js"></script>
   </head>
   <body>
     <canvas id="canvas"></canvas>
@@ -22,7 +22,7 @@
 
       // Load the images in parallel
       var imageObjs = params.images;
-      _.each(imageObjs, function (imageObj, cb) {
+      async.each(imageObjs, function (imageObj, cb) {
         // Create an image and specify the source
         var img = new Image();
         img.src = imageObj.img._urlpath;
