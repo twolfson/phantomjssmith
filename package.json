@@ -33,7 +33,6 @@
     "obj-extend": "~0.1.0",
     "temporary": "0.0.5",
     "async": "~0.2.7",
-    "phantomjs": "~1.9.2-2",
     "which": "~1.0.5"
   },
   "devDependencies": {
