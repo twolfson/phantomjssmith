@@ -6,9 +6,16 @@ node_js:
 env:
   - PHANTOMJS_VERSION="1.9.1"
   - PHANTOMJS_VERSION="1.9.2"
+  - PHANTOMJS_VERSION="1.9.1" TEST_SPACES=1
 install:
+  # For space tests, move the directory to one with spaces
+  - 'test -n "$TEST_SPACES" && cd .. && mv phantomjssmith "space phantomjssmith" && cd "space phantomjssmith"'
+
   # Set up PhantomJS version
   - ./test/install.sh
+
+  # Output phantomjs version
+  - phantomjs --version
 
   # Install dependencies
   - npm install
