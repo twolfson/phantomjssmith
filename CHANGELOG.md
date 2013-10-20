@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.1.10 - Fixed space directory bug #40
+
 0.1.9 - Fixed OSX bug for PhantomJS 1.9.2 #33
 
 0.1.8 - Fixed Windows bug for full phantomjs path
