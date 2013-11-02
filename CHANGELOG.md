@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.1.11 - Fixed Mavericks performance message bug #45
+
 0.1.10 - Fixed space directory bug #40
 
 0.1.9 - Fixed OSX bug for PhantomJS 1.9.2 #33
