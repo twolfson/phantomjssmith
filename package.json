@@ -34,7 +34,9 @@
     "temporary": "0.0.5",
     "async": "~0.2.7",
     "which": "~1.0.5",
-    "shell-quote": "~1.4.0"
+    "shell-quote": "~1.4.0",
+    "ndarray": "~1.0.8",
+    "save-pixels": "~0.3.0"
   },
   "devDependencies": {
     "grunt": "~0.3.17",
