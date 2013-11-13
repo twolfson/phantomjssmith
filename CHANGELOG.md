@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.2.0 - Moved off of .toDataURL and onto .getImageData to significantly reduce output size. Fixes #46
+
 0.1.11 - Fixed Mavericks performance message bug #45
 
 0.1.10 - Fixed space directory bug #40
