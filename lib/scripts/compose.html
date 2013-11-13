@@ -51,9 +51,24 @@
           context.drawImage(img._img, img.x, img.y);
         });
 
-        // Capture the data url and save it for later
-        var retStr = canvas.toDataURL('image/png');
-        window.retStr = retStr;
+        // Capture the rgba pixels and save it for later
+        // DEV: We cannot use `.toDataURL` because it is bloating 5kB images to 120kB.
+        // https://github.com/Ensighten/grunt-spritesmith/issues/46
+        var data = context.getImageData(0, 0, params.width, params.height).data;
+        var i = 0;
+        var len = data.length;
+        var retArr = new Array(len);
+        for (; i < len; i++) {
+          // TODO: If data size is super important, consider doubling up on digits by offsetting by 256 (this does lead into potential issues with orphan end pair)
+          // TODO: Never mind, we can't do anything with this damn offset
+          retArr[i] = String.fromCharCode(data[i] + 33);
+        }
+        window.retStr = retArr.join('');
+
+
+        // // Capture the data url and save it for later
+        // var retStr = canvas.toDataURL('image/png');
+        // window.retStr = retStr;
       });
     </script>
   </body>
