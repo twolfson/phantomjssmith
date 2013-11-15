@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.2.2 - Fix for broken tests on Windows
+
 0.2.1 - Removed dev fs.writeFileSync
 
 0.2.0 - Moved off of .toDataURL and onto .getImageData to significantly reduce output size. Fixes #46
