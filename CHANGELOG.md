@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.2.3 - Added expected file for tests against node@0.8
+
 0.2.2 - Fix for broken tests on Windows
 
 0.2.1 - Removed dev fs.writeFileSync
