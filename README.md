@@ -40,6 +40,14 @@ https://github.com/twolfson/spritesmith-engine-test
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
 
+## Donating
+Support this project and [others by twolfson][gittip] via [gittip][].
+
+[![Support via Gittip][gittip-badge]][gittip]
+
+[gittip-badge]: https://rawgithub.com/twolfson/gittip-badge/master/dist/gittip.png
+[gittip]: https://www.gittip.com/twolfson/
+
 ## License
 Copyright (c) 2013 Todd Wolfson
 
