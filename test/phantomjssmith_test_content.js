@@ -30,7 +30,7 @@ module.exports = extend({}, commonTest, {
         // Generate a long string (looooooong)
         // https://github.com/twolfson/phantomjssmith/issues/3
         var longStr = 'l',
-            i = 71663;
+            i = 10e6;
         while (i--) {
           longStr += 'o';
         }
@@ -38,6 +38,7 @@ module.exports = extend({}, commonTest, {
 
         // Export canvas with way too much meta data
         canvas['export']({format: 'png', longStr: longStr}, function (err, result) {
+          console.log(result.length);
           that.result = result;
           done(err);
         });
