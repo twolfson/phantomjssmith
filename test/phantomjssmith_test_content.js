@@ -38,6 +38,7 @@ module.exports = extend({}, commonTest, {
 
         // Export canvas with way too much meta data
         canvas['export']({format: 'png', longStr: longStr}, function (err, result) {
+          console.log(err);
           console.log(result.length);
           that.result = result;
           done(err);
