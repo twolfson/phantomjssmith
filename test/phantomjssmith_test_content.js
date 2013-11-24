@@ -29,8 +29,9 @@ module.exports = extend({}, commonTest, {
 
         // Generate a long string (looooooong)
         // https://github.com/twolfson/phantomjssmith/issues/3
+        // DEV: Unfortunately, this test doesn't reproduce the issue on Linux
         var longStr = 'l',
-            i = 10e6;
+            i = 71663;
         while (i--) {
           longStr += 'o';
         }
@@ -38,8 +39,6 @@ module.exports = extend({}, commonTest, {
 
         // Export canvas with way too much meta data
         canvas['export']({format: 'png', longStr: longStr}, function (err, result) {
-          console.log(err);
-          console.log(result.length);
           that.result = result;
           done(err);
         });
