@@ -27,8 +27,17 @@ module.exports = extend({}, commonTest, {
           canvas.addImage(img, coordinates.x, coordinates.y);
         }, canvas);
 
-        // Export canvas
-        canvas['export']({format: 'png', looooong: 'infooo'}, function (err, result) {
+        // Generate a long string (looooooong)
+        // https://github.com/twolfson/phantomjssmith/issues/3
+        var longStr = 'l',
+            i = 71663;
+        while (i--) {
+          longStr += 'o';
+        }
+        longStr += 'ng';
+
+        // Export canvas with way too much meta data
+        canvas['export']({format: 'png', longStr: longStr}, function (err, result) {
           that.result = result;
           done(err);
         });
