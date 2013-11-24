@@ -7,5 +7,8 @@ module.exports = extend({}, commonTest, {
 
     var expectedDir = __dirname + '/expected_files/';
     this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
+  },
+  'running against very long URLs': function () {
+    console.log('hi');
   }
 });
