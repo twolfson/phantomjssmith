@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.3.0 - Moved to PhantomJS evaluate over URL passing of parameters. Fixes #3
+
 0.2.4 - Added donation section to README
 
 0.2.3 - Added expected file for tests against node@0.8
