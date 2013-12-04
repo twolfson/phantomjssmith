@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.4.0 - Added `timeout` option to `export`
+
 0.3.0 - Moved to PhantomJS evaluate over URL passing of parameters. Fixes #3
 
 0.2.4 - Added donation section to README
