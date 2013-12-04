@@ -7,6 +7,11 @@ outline.push({
     'returns an image'
   ]
 });
+outline.push({
+  'with a custom timeout': [
+    'times out very easily'
+  ]
+});
 
 module.exports = {
   'phantomjssmith': outline
