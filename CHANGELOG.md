@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.4.2 - Upgraded `temporary` to fix `node@0.11`. Via @netroy
+
 0.4.1 - Upgraded `npm` inside of Travis CI to fix `node@0.8` issue
 
 0.4.0 - Added `timeout` option to `export`
