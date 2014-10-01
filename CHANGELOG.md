@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.4.3 - Upgraded to `spritesmith-engine-test@1.2.1` to remove per-repo expected images
+
 0.4.2 - Upgraded `temporary` to fix `node@0.11`. Via @netroy
 
 0.4.1 - Upgraded `npm` inside of Travis CI to fix `node@0.8` issue
