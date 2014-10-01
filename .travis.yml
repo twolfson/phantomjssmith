@@ -13,7 +13,7 @@ env:
 
 before_install:
   # Upgrade `npm` to avoid semver issues
-  - npm install npm@latest -g
+  - npm install npm@1.x.x -g
 
 install:
   # For space tests, move the directory to one with spaces
