@@ -5,9 +5,6 @@ var smith = require('../lib/phantomjssmith'),
 module.exports = extend({}, commonTest, {
   'phantomjssmith': function () {
     this.smith = smith;
-
-    var expectedDir = __dirname + '/expected_files/';
-    this.expectedFilepaths = [expectedDir + '/multiple.png', expectedDir + '/multiple2.png'];
   },
   'running against very long URLs': ['parsing multiple images', function (done) {
     var that = this,
