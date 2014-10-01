@@ -1,7 +1,6 @@
-var smith = require('../lib/phantomjssmith'),
-    expect = require('chai').expect,
-    extend = require('obj-extend'),
-    commonTest = require('spritesmith-engine-test').content;
+var expect = require('chai').expect;
+var extend = require('obj-extend');
+var commonTest = require('spritesmith-engine-test').content;
 module.exports = extend({}, commonTest, {
   'phantomjssmith': function () {
     this.smith = smith;

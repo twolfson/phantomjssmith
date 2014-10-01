@@ -27,7 +27,7 @@
   },
   "scripts": {
     "preinstall": "phantomjs --version",
-    "test": "doubleshot --timeout 60000"
+    "test": "mocha --timeout 60000"
   },
   "dependencies": {
     "obj-extend": "~0.1.0",
@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "doubleshot": "~2.13.1",
     "grunt": "~0.3.17",
+    "mocha": "~1.21.4",
     "spritesmith-engine-test": "~1.2.1"
   },
   "keywords": [
