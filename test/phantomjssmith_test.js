@@ -4,7 +4,7 @@ var spritesmithEngineTest = require('spritesmith-engine-test');
 var phantomjssmith = require('../lib/phantomjssmith');
 
 // Start the normal test
-spritesmithEngineTest({
+spritesmithEngineTest.run({
   engine: phantomjssmith,
   engineName: 'phantomjssmith'
 });
