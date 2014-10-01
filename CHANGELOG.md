@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.4.4 - Corrected typo in assert message via @yairEO in twolfson/gulp.spritesmith#19
+
 0.4.3 - Upgraded to `spritesmith-engine-test@1.2.1` to remove per-repo expected images
 
 0.4.2 - Upgraded `temporary` to fix `node@0.11`. Via @netroy
