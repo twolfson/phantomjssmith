@@ -60,7 +60,7 @@ describe('phantomjssmith', function () {
     // Run export with short timeout
     before(function exportWithShortTimeout (done) {
       var that = this;
-      canvas['export']({format: 'png', timeout: 1}, function (err, result) {
+      this.canvas['export']({format: 'png', timeout: 1}, function (err, result) {
         that.err = err;
         that.result = result;
         done();
