@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.4.6 - Upgraded to `spritesmith-engine-test@2.0.0` and moved to `mocha`
+
 0.4.5 - Fixed `npm install` inside of Travis CI for `node@0.8` issues
 
 0.4.4 - Corrected typo in assert message via @yairEO in twolfson/gulp.spritesmith#19
