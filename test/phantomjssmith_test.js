@@ -53,12 +53,11 @@ describe('phantomjssmith', function () {
       });
     });
 
-
     it('does not crash', function () {
-
+      // Would have thrown
     });
     it('returns an image', function () {
-
+      expect(this.result).to.not.equal('');
     });
   });
 
