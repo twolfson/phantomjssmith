@@ -10,13 +10,14 @@ spritesmithEngineTest.run({
 });
 
 // Define phantomjssmith specific tests
+var testUtils = spritesmithEngineTest.spritesmithUtils;
 describe('phantomjssmith', function () {
   describe('running against very long URLs', function () {
     // Set up canvas for test case
     var multipleImages = spritesmithEngineTest.config.multipleImages;
-    spritesmithUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
-    exports._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
-    exports._addImages(multipleImages.coordinateArr);
+    testUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
+    testUtils._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
+    testUtils._addImages(multipleImages.coordinateArr);
 
     // Run export with excessive meta data
     before(function exportWithLongMetadata (done) {
@@ -52,9 +53,9 @@ describe('phantomjssmith', function () {
   describe('with a custom timeout', function () {
     // Set up canvas for test case
     var multipleImages = spritesmithEngineTest.config.multipleImages;
-    spritesmithUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
-    exports._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
-    exports._addImages(multipleImages.coordinateArr);
+    testUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
+    testUtils._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
+    testUtils._addImages(multipleImages.coordinateArr);
 
     // Run export with short timeout
     before(function exportWithShortTimeout (done) {
