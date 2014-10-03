@@ -13,10 +13,13 @@ spritesmithEngineTest.run({
 var testUtils = spritesmithEngineTest.spritesmithUtils;
 describe('phantomjssmith', function () {
   describe('exporting a jpeg', function () {
+    // Set up canvas for test case
     var multipleImages = spritesmithEngineTest.config.multipleImages;
     testUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
     testUtils._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
     testUtils._addImages(multipleImages.coordinateArr);
+
+    // Run export for a jpeg
     before(function exportJpeg (done) {
       // Export canvas as a jpeg
       // https://github.com/twolfson/gulp.spritesmith/issues/19#issuecomment-57157408
@@ -30,9 +33,13 @@ describe('phantomjssmith', function () {
       delete this.result;
     });
 
+    // Load in pixels for assertions
+    // TODO: Change `multipleImages.expectedImage` to a jpeg? or back to a png
+    // TODO: Add debug for image/jpeg
     spritesmithUtils.loadActualPixels('image/jpeg');
     spritesmithUtils.loadExpectedPixels(multipleImages.expectedImage, 'image/jpeg');
 
+    // Assert against our pixels
     it('returns an image', function () {
       // Localize pixel info
       var actualPixels = this.actualPixels;
