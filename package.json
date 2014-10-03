@@ -30,13 +30,14 @@
     "test": "mocha --timeout 60000"
   },
   "dependencies": {
-    "obj-extend": "~0.1.0",
-    "temporary": "0.0.8",
     "async": "~0.2.7",
-    "which": "~1.0.5",
-    "shell-quote": "~1.4.0",
+    "jpeg-js": "0.0.4",
     "ndarray": "~1.0.8",
-    "save-pixels": "~0.3.0"
+    "obj-extend": "~0.1.0",
+    "save-pixels": "~0.3.0",
+    "shell-quote": "~1.4.0",
+    "temporary": "0.0.8",
+    "which": "~1.0.5"
   },
   "devDependencies": {
     "chai": "~1.8.1",
