@@ -38,7 +38,6 @@ describe('phantomjssmith', function () {
       testUtils.debugResult();
     }
 
-
     // Load in pixels for assertions
     // TODO: Change `multipleImages.expectedImage` to a jpeg? or back to a png
     // TODO: Add debug for image/jpeg
