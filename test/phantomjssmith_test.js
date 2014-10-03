@@ -13,13 +13,10 @@ spritesmithEngineTest.run({
 var testUtils = spritesmithEngineTest.spritesmithUtils;
 describe('phantomjssmith', function () {
   describe('exporting a jpeg', function () {
-    // Set up canvas for test case
     var multipleImages = spritesmithEngineTest.config.multipleImages;
     testUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
     testUtils._createCanvas(phantomjssmith, multipleImages.width, multipleImages.height);
     testUtils._addImages(multipleImages.coordinateArr);
-
-    // Run export with excessive meta data
     before(function exportJpeg (done) {
       // Export canvas as a jpeg
       // https://github.com/twolfson/gulp.spritesmith/issues/19#issuecomment-57157408
@@ -33,11 +30,23 @@ describe('phantomjssmith', function () {
       delete this.result;
     });
 
-    it('does not crash', function () {
-      // Would have thrown
-    });
+    spritesmithUtils.loadActualPixels('image/jpeg');
+    spritesmithUtils.loadExpectedPixels(multipleImages.expectedImage, 'image/jpeg');
+
     it('returns an image', function () {
-      expect(this.result).to.not.equal('');
+      // Localize pixel info
+      var actualPixels = this.actualPixels;
+      var expectedPixels = this.expectedPixels;
+
+      // Compare pixels
+      var i = 0;
+      var len = actualPixels.length;
+      for (; i < len; i++) {
+        // If the pixels did not match, complain and throw
+        var pixelsWithinThreshold = Math.abs(expectedPixels[i] - actualPixels[i]) <= 10;
+        expect(pixelsWithinThreshold).to.equal(true,
+          'Expected ' + expectedPixels[i] + ' and ' + actualPixels[i] + ' to be at most 10 apart. Index was ' + i);
+      }
     });
   });
 
