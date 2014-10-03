@@ -43,6 +43,7 @@ These are options specific `phantomjssmith`
 - options `Object`
   - timeout `Number` - Milliseconds to wait until automatically terminating PhantomJS script. By default, this is `10000` (10 seconds).
   - format `String` - Output image format to callback with. Currently, `png` and `jpeg` are available.
+  - quality `Number` - If you are outputting a `jpeg`, the quality can be specified from 0 to 100.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
