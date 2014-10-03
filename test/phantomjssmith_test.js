@@ -33,11 +33,17 @@ describe('phantomjssmith', function () {
       delete this.result;
     });
 
+    // Allow for debugging
+    if (process.env.TEST_DEBUG) {
+      testUtils.debugResult();
+    }
+
+
     // Load in pixels for assertions
     // TODO: Change `multipleImages.expectedImage` to a jpeg? or back to a png
     // TODO: Add debug for image/jpeg
-    spritesmithUtils.loadActualPixels('image/jpeg');
-    spritesmithUtils.loadExpectedPixels(multipleImages.expectedImage, 'image/jpeg');
+    testUtils.loadActualPixels('image/jpeg');
+    testUtils.loadExpectedPixels(multipleImages.expectedImage, 'image/jpeg');
 
     // Assert against our pixels
     it('returns an image', function () {
