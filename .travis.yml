@@ -9,13 +9,15 @@ matrix:
   # Add orthogonal tests for phantom js versions
   include:
     - node_js: "0.10"
-      env: PHANTOMJS_VERSION="TRAVIS"
-    - node_js: "0.10"
       env: PHANTOMJS_VERSION="1.9.2"
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="1.9.8"
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
+
+# Provide default environment for using Travis' phantomjs
+env:
+  - PHANTOMJS_VERSION="TRAVIS"
 
 before_install:
   # Upgrade `npm` to avoid semver issues
