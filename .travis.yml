@@ -7,9 +7,9 @@ matrix:
   allow_failures:
     - node_js: "0.11"
 env:
-  - PHANTOMJS_VERSION="1.9.1"
+  - PHANTOMJS_VERSION="TRAVIS"
   - PHANTOMJS_VERSION="1.9.2"
-  - PHANTOMJS_VERSION="1.9.1" TEST_SPACES=1
+  - PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
 before_install:
   # Upgrade `npm` to avoid semver issues
