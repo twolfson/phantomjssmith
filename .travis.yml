@@ -1,12 +1,19 @@
 language: node_js
+# Test against all versions of node with default phantomjs on Travis CI
 node_js:
   - "0.11"
   - "0.10"
   - "0.8"
+env:
+  - PHANTOMJS_VERSION="TRAVIS"
+
+# Additionally
 matrix:
+  # Ignore 0.11 test failures
   allow_failures:
     - node_js: "0.11"
-  # Add orthogonal tests for phantom js versions
+  # Test against different phantomjs versions with node@0.10
+  #   and test for spaces in filepath regression
   include:
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="1.9.2"
@@ -15,9 +22,6 @@ matrix:
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
-# Provide default environment for using Travis' phantomjs
-env:
-  - PHANTOMJS_VERSION="TRAVIS"
 
 before_install:
   # Upgrade `npm` to avoid semver issues
