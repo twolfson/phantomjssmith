@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Output commands and stop on first error
+set -e
+set -x
 
 # If we are installing not using the default Travis version
 if [[ "$PHANTOMJS_VERSION" != "TRAVIS" ]]; then
