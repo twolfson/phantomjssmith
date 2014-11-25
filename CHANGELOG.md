@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.5.1 - Fixed `phantomjs@1.9.8` crashing issue. Fixes #8
+
 0.5.0 - Added support for JPEG images
 
 0.4.6 - Upgraded to `spritesmith-engine-test@2.0.0` and moved to `mocha`
