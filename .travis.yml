@@ -22,7 +22,6 @@ matrix:
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
-
 before_install:
   # Upgrade `npm` to avoid semver issues
   - npm install npm@1.x.x -g
