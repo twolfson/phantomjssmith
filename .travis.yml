@@ -1,5 +1,5 @@
-language: node_js
 # Test against all versions of node with default phantomjs on Travis CI
+language: node_js
 node_js:
   - "0.11"
   - "0.10"
@@ -22,6 +22,7 @@ matrix:
     - node_js: "0.10"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
+# Define our test dependencies
 before_install:
   # Upgrade `npm` to avoid semver issues
   - npm install npm@1.x.x -g
@@ -39,5 +40,6 @@ install:
   # Install dependencies
   - npm install
 
+# Don't receive any notifications (use badge only)
 notifications:
   email: false
