@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.5.4 - Added timeout for stats close to fix Windows stats bug. Fixes Ensighte/grunt-spritesmith#100
+
 0.5.3 - Simplified annoying false negative failures of JPEG test
 
 0.5.2 - Fixed accidental link in documentation
