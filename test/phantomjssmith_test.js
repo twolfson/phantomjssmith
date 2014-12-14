@@ -12,7 +12,7 @@ spritesmithEngineTest.run({
 // Define phantomjssmith specific tests
 var testUtils = spritesmithEngineTest.spritesmithUtils;
 describe('phantomjssmith', function () {
-  describe.only('exporting a jpeg', function () {
+  describe('exporting a jpeg', function () {
     // Set up canvas for test case
     var multipleImages = spritesmithEngineTest.config.multipleImages;
     testUtils.interpretImages(phantomjssmith, multipleImages.filepaths);
