@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.5.3 - Simplified annoying false negative failures of JPEG test
+
 0.5.2 - Fixed accidental link in documentation
 
 0.5.1 - Fixed `phantomjs@1.9.8` crashing issue. Fixes #8
