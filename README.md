@@ -37,7 +37,7 @@ This module was built to the specification for all spritesmith modules.
 
 https://github.com/twolfson/spritesmith-engine-test
 
-### canvas['export'](options, cb)
+### canvas\['export'\](options, cb)
 These are options specific `phantomjssmith`
 
 - options `Object`
