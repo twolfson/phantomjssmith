@@ -11,7 +11,7 @@ This depends on having `phantomjs` installed on your machine. This can be done g
 [npm-phantomjs]: https://github.com/Medium/phantomjs
 
 ### Global installation
-[PhantomJS][phantomjs] installation instructions can be found on [the PhantomJS website][]. When `phantomjssmith` is running, `phantomjs` must be resolvable via the `PATH` environment variable.
+[PhantomJS][phantomjs] installation instructions can be found on [the PhantomJS website][phantomjs]. When `phantomjssmith` is running, `phantomjs` must be resolvable via the `PATH` environment variable.
 
 http://phantomjs.org/
 
