@@ -13,8 +13,12 @@ This depends on having `phantomjs` installed on your machine. This can be done g
 ### Global installation
 [PhantomJS][phantomjs] installation instructions can be found on [the PhantomJS website][]. When `phantomjssmith` is running, `phantomjs` must be resolvable via the `PATH` environment variable.
 
+http://phantomjs.org/
+
 ### Local installation
-A `phantomjs` wrapper can be install via: `npm install phantomjs`
+A [phantomjs wrapper][npm-phantomjs] can be install via: `npm install phantomjs`
+
+https://github.com/Medium/phantomjs
 
 When running your `phantomjssmith` task, it must have `node_modules/.bin/` in the `PATH` environment variable. The easiest way to accomplish this is by using [`npm scripts`][npm-scripts]:
 
