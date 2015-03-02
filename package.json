@@ -27,6 +27,7 @@
   },
   "scripts": {
     "preinstall": "phantomjs --version",
+    "postinstall": "false",
     "test": "mocha --timeout 60000"
   },
   "dependencies": {
