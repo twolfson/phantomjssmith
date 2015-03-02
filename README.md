@@ -14,7 +14,25 @@ This depends on having `phantomjs` installed on your machine. This can be done g
 [PhantomJS][phantomjs] installation instructions can be found on [the PhantomJS website][]. When `phantomjssmith` is running, `phantomjs` must be resolvable via the `PATH` environment variable.
 
 ### Local installation
+A `phantomjs` wrapper can be install via: `npm install phantomjs`
 
+When running your `phantomjssmith` task, it must have `node_modules/.bin/` in the `PATH` environment variable. The easiest way to accomplish this is by using [`npm scripts`][npm-scripts]:
+
+[npm-scripts]: https://docs.npmjs.com/misc/scripts
+
+```js
+// Inside our `package.json`
+{
+  "scripts": {
+    "build": "grunt sprite"
+  }
+}
+```
+
+```bash
+# Runs `grunt sprite` with `node_modules/.bin/` appended to `PATH`
+npm run build
+```
 
 ## Getting Started
 Install the module with: `npm install phantomjssmith`
