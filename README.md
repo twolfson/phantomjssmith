@@ -6,7 +6,15 @@
 [spritesmith]: https://github.com/Ensighten/spritesmith
 
 ## Requirements
-This depends on having `phantomjs` installed on your machine. For installation instructions, visit [the website][phantomjs]. This module has been tested against `1.9.0`.
+This depends on having `phantomjs` installed on your machine. This can be done globally as listed on [the PhantomJS website][phantomjs] or locally via the [node module wrapper][npm-phantomjs]. This module has been tested against `1.9.2` and `1.9.8`.
+
+[npm-phantomjs]: https://github.com/Medium/phantomjs
+
+### Global installation
+[PhantomJS][phantomjs] installation instructions can be found on [the PhantomJS website][]. When `phantomjssmith` is running, `phantomjs` must be resolvable via the `PATH` environment variable.
+
+### Local installation
+
 
 ## Getting Started
 Install the module with: `npm install phantomjssmith`
