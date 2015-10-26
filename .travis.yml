@@ -1,9 +1,10 @@
 # Test against all versions of node with default phantomjs on Travis CI
 language: node_js
 node_js:
+  - "4.2"
+  - "0.12"
   - "0.11"
   - "0.10"
-  - "0.8"
 env:
   - PHANTOMJS_VERSION="TRAVIS"
 
