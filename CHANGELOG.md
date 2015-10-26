@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.6.2 - Updated supported node versions to `>= 0.10.0`
+
 0.6.1 - Added `foundry` for release
 
 0.6.0 - Moved to `phantomjs` detection to `postinstall` hook
