@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.6.1 - Added `foundry` for release
+
 0.6.0 - Moved to `phantomjs` detection to `postinstall` hook
 
 0.5.4 - Added timeout for stats close to fix Windows stats bug. Fixes Ensighte/grunt-spritesmith#100
