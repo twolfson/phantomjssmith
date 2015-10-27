@@ -7,9 +7,11 @@
   "undef": true,
   "strict": false,
   "node": true,
+  "browser": true,
   "sub": false,
   "globals": {
     "exports": true,
+    "phantom": true,
     "describe": true,
     "before": true,
     "beforeEach": true,

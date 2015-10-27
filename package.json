@@ -27,10 +27,8 @@
   },
   "scripts": {
     "lint": "twolfson-style lint lib/ test/",
-    "precheck": "twolfson-style precheck lib/ test/",
-    "pretest": "twolfson-style install",
     "postinstall": "phantomjs --version",
-    "test": "npm run precheck && mocha --reporter dot --timeout 60000 && npm run lint"
+    "test": "mocha --reporter dot --timeout 60000 && npm run lint"
   },
   "dependencies": {
     "async": "~0.2.7",
