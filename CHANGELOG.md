@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.7.0 - Cleaned up technical debt (e.g. using `shell-quote`, synchronous writing to disk)
+
 0.6.3 - Replaced `grunt` with `twolfson-style` for linting
 
 0.6.2 - Updated supported node versions to `>= 0.10.0`
