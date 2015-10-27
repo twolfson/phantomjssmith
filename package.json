@@ -35,7 +35,7 @@
     "jpeg-js": "0.0.4",
     "ndarray": "~1.0.8",
     "obj-extend": "~0.1.0",
-    "save-pixels": "~2.2.1",
+    "save-pixels": "~0.3.0",
     "shell-quote": "~1.4.0",
     "temporary": "0.0.8",
     "which": "~1.0.5"
