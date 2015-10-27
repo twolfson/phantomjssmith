@@ -127,6 +127,7 @@ describe('phantomjssmith', function () {
 
     it('times out very easily', function () {
       expect(this.err.message).to.contain('Timing out script.');
+      expect(this.err.message).to.not.contain('Error while parsing JSON');
     });
   });
 });
