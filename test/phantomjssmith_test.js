@@ -78,8 +78,8 @@ describe('phantomjssmith', function () {
       // Generate a long string (looooooong)
       // https://github.com/twolfson/phantomjssmith/issues/3
       // DEV: Unfortunately, this test doesn't reproduce the issue on Linux
-      var longStr = 'l',
-          i = 71663;
+      var longStr = 'l';
+      var i = 71663;
       while (i--) {
         longStr += 'o';
       }
