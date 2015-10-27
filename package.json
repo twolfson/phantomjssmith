@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "async": "~0.2.7",
+    "concat-stream": "~1.5.1",
     "jpeg-js": "0.0.4",
     "ndarray": "~1.0.8",
     "obj-extend": "~0.1.0",
