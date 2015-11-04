@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.7.2 - Cleaned up documentation and linked to spritesmith-engine-spec
+
 0.7.1 - Upgraded to `spritesmith-engine-test@3.0.0` to clean up technical debt
 
 0.7.0 - Cleaned up technical debt (e.g. using `shell-quote`, synchronous writing to disk)
