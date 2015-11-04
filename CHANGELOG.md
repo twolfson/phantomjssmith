@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.7.1 - Upgraded to `spritesmith-engine-test@3.0.0` to clean up technical debt
+
 0.7.0 - Cleaned up technical debt (e.g. using `shell-quote`, synchronous writing to disk)
 
 0.6.3 - Replaced `grunt` with `twolfson-style` for linting
