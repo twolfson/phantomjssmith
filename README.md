@@ -1,6 +1,6 @@
 # phantomjssmith [![Build status](https://travis-ci.org/twolfson/phantomjssmith.png?branch=master)](https://travis-ci.org/twolfson/phantomjssmith)
 
-[PhantomJS][phantomjs] engine for [spritesmith][spritesmith].
+[PhantomJS][phantomjs] engine for [spritesmith][].
 
 [phantomjs]: http://phantomjs.org/
 [spritesmith]: https://github.com/Ensighten/spritesmith
@@ -63,17 +63,18 @@ phantomjssmith.createImages(this.images, function handleImages (err, imgs) {
 ```
 
 ## Documentation
-This module was built to the specification for all spritesmith modules.
+This module was built to the specification for spritesmith engines.
 
-https://github.com/twolfson/spritesmith-engine-test
+https://github.com/twolfson/spritesmith-engine-spec
 
-### canvas\['export'\](options, cb)
-These are options specific `phantomjssmith`
+### `canvas.export(options, cb)`
+Our `export` method provides support for the following options:
 
 - options `Object`
-  - timeout `Number` - Milliseconds to wait until automatically terminating PhantomJS script. By default, this is `10000` (10 seconds).
-  - format `String` - Output image format to callback with. Currently, `png` and `jpeg` are available.
-  - quality `Number` - If you are outputting a `jpeg`, the quality can be specified from 0 to 100.
+    - timeout `Number` - Milliseconds to wait until automatically terminating PhantomJS script
+        - By default, this is `10000` (10 seconds).
+    - format `String` - Output image format to callback with. Currently, `png` and `jpeg` are available.
+    - quality `Number` - If you are outputting a `jpeg`, the quality can be specified from 0 to 100.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint using `npm run lint` and test via `npm test`.
