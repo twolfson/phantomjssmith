@@ -13,8 +13,6 @@ if [[ "$PHANTOMJS_VERSION" = "2.0.0" ]]; then
 
   tar xvf "phantomjs-$PHANTOMJS_VERSION-ubuntu-12.04.tar.bz2"
   sudo ln -s "$PWD/phantomjs" "/usr/bin/phantomjs"
-  ls -la
-  ./phantomjs --version
 # Otherwise if we are installing not using the default Travis version
 elif [[ "$PHANTOMJS_VERSION" != "TRAVIS" ]]; then
   # Uninstall current version
