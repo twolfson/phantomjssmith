@@ -3,8 +3,15 @@
 set -e
 set -x
 
-# If we are installing not using the default Travis version
-if [[ "$PHANTOMJS_VERSION" != "TRAVIS" ]]; then
+# If we are installing a non-official binary
+if [[ "$PHANTOMJS_VERSION" = "2.0.0" ]]; then
+  # Download Travis CI's version
+  wget "https://s3.amazonaws.com/travis-phantomjs/phantomjs-$PHANTOMJS_VERSION-ubuntu-12.04.tar.bz2"
+
+  tar xvf "phantomjs-$PHANTOMJS_VERSION-ubuntu-12.04.tar.bz2"
+  sudo ln -s "$PWD/phantomjs" "/usr/bin/phantomjs"
+elif [[ "$PHANTOMJS_VERSION" != "TRAVIS" ]]; then
+# Otherwise if we are installing not using the default Travis version
   # Uninstall current version
   sudo rm "$(which phantomjs)"
 
