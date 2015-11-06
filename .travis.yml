@@ -36,6 +36,7 @@ install:
   - ./test/install.sh
 
   # Output phantomjs version
+  - which phantomjs
   - phantomjs --version
 
   # Install dependencies
