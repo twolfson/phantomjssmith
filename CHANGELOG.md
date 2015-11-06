@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.7.3 - Added PhantomJS@2.0.0 to Travis CI
+
 0.7.2 - Cleaned up documentation and linked to spritesmith-engine-spec
 
 0.7.1 - Upgraded to `spritesmith-engine-test@3.0.0` to clean up technical debt
