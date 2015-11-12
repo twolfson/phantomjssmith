@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+0.7.5 - Forgot to merge our branch
+
 0.7.4 - Added `specVersion` to repo and added `spritesmith-engine` to keywords
 
 0.7.3 - Added PhantomJS@2.0.0 to Travis CI
