@@ -65,9 +65,9 @@ phantomjssmith.createImages(this.images, function handleImages (err, imgs) {
 ## Documentation
 This module was built to the specification for spritesmith engines.
 
-**Specification version:** 1.1.0
+**Specification version:** 2.0.0
 
-https://github.com/twolfson/spritesmith-engine-spec/tree/1.1.0
+https://github.com/twolfson/spritesmith-engine-spec/tree/2.0.0
 
 ### `canvas.export(options, cb)`
 Our `export` method provides support for the following options:
