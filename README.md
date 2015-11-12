@@ -41,23 +41,34 @@ npm run build
 ## Getting Started
 Install the module with: `npm install phantomjssmith`
 
-```javascript
-// Convert images into phantomjssmith objects
-var images = ['img1.jpg', 'img2.png'];
-phantomjssmith.createImages(this.images, function handleImages (err, imgs) {
-  // Create a canvas to draw onto (200 pixels wide, 300 pixels tall)
-  phantomjssmith.createCanvas(200, 200, function (err, canvas) {
-    // Add each image at a specific location (upper left corner = {x, y})
-    var coordinatesArr = [{x: 0, y: 0}, {x: 50, y: 50}];
-    imgs.forEach(function (img, i) {
-      var coordinates = coordinatesArr[i];
-      canvas.addImage(img, coordinates.x, coordinates.y);
-    }, canvas);
+```js
+// Load in our dependencies
+var Phantomjssmith = require('phantomjssmith');
 
-    // Export canvas to image
-    canvas['export']({format: 'png'}, function (err, result) {
-      result; // Binary string representing a PNG image of the canvas
-    });
+// Create a new engine
+var phantomjssmith = new Phantomjssmith();
+
+// Interpret some images from disk
+phantomjssmith.createImages(['img1.jpg', 'img2.png'], function handleImages (err, imgs) {
+  // If there was an error, throw it
+  if (err) {
+    throw err;
+  }
+
+  // We recieve images in the same order they were given
+  imgs[0].width; // 50 (pixels)
+  imgs[0].height; // 100 (pixels)
+
+  // Create a canvas that fits our images (200px wide, 300px tall)
+  var canvas = phantomjssmith.createCanvas(200, 300);
+
+  // Add the images to our canvas (at x=0, y=0 and x=50, y=100 respectively)
+  canvas.addImage(imgs[0], 0, 0);
+  canvas.addImage(imgs[1], 50, 100);
+
+  // Export canvas to image
+  canvas['export']({format: 'png'}, function handleOuput (err, result) {
+    result; // Binary string representing a PNG image of the canvas
   });
 });
 ```
