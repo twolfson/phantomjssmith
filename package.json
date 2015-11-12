@@ -21,7 +21,7 @@
       "url": "https://github.com/twolfson/phantomjssmith/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/phantomjssmith",
+  "main": "lib/engine",
   "engines": {
     "node": ">= 0.10.0"
   },

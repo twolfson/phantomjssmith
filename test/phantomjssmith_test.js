@@ -1,11 +1,11 @@
 // Load in dependencies
 var expect = require('chai').expect;
 var spritesmithEngineTest = require('spritesmith-engine-test');
-var phantomjssmith = require('../lib/phantomjssmith');
+var Phantomjssmith = require('../');
 
 // Start the normal test
 spritesmithEngineTest.run({
-  engine: phantomjssmith,
+  engine: Phantomjssmith,
   engineName: 'phantomjssmith',
   tests: {
     renderGifCanvas: false
@@ -18,8 +18,9 @@ describe('phantomjssmith', function () {
   describe('running against very long URLs', function () {
     // Set up canvas for test case
     var multiplePngImages = spritesmithEngineTest.config.multiplePngImages;
-    testUtils.interpretImages(phantomjssmith, multiplePngImages.filepaths);
-    testUtils._createCanvas(phantomjssmith, multiplePngImages.width, multiplePngImages.height);
+    testUtils.createEngine(Phantomjssmith);
+    testUtils.interpretImages(multiplePngImages.filepaths);
+    testUtils._createCanvas(multiplePngImages.width, multiplePngImages.height);
     testUtils._addImages(multiplePngImages.coordinateArr);
 
     // Run export with excessive meta data
@@ -56,8 +57,9 @@ describe('phantomjssmith', function () {
   describe('with a custom timeout', function () {
     // Set up canvas for test case
     var multiplePngImages = spritesmithEngineTest.config.multiplePngImages;
-    testUtils.interpretImages(phantomjssmith, multiplePngImages.filepaths);
-    testUtils._createCanvas(phantomjssmith, multiplePngImages.width, multiplePngImages.height);
+    testUtils.createEngine(Phantomjssmith);
+    testUtils.interpretImages(multiplePngImages.filepaths);
+    testUtils._createCanvas(multiplePngImages.width, multiplePngImages.height);
     testUtils._addImages(multiplePngImages.coordinateArr);
 
     // Run export with short timeout
