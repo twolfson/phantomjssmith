@@ -1,4 +1,5 @@
 // Load in dependencies
+var concat = require('concat-stream');
 var expect = require('chai').expect;
 var spritesmithEngineTest = require('spritesmith-engine-test');
 var Phantomjssmith = require('../');
@@ -37,10 +38,12 @@ describe('phantomjssmith', function () {
 
       // Export canvas with way too much meta data
       var that = this;
-      this.canvas['export']({format: 'png', longStr: longStr}, function (err, result) {
+      var resultStream = this.canvas['export']({format: 'png', longStr: longStr});
+      resultStream.on('error', done);
+      resultStream.pipe(concat(function handleResult (result) {
         that.result = result;
-        done(err);
-      });
+        done();
+      }));
     });
     after(function cleanupExport () {
       delete this.result;
@@ -65,15 +68,15 @@ describe('phantomjssmith', function () {
     // Run export with short timeout
     before(function exportWithShortTimeout (done) {
       var that = this;
-      this.canvas['export']({format: 'png', timeout: 1}, function (err, result) {
+      var resultStream = this.canvas['export']({format: 'png', timeout: 1});
+      resultStream.on('error', function saveError (err) {
         that.err = err;
-        that.result = result;
         done();
       });
+      resultStream.on('end', done);
     });
     after(function cleanupResults () {
       delete this.err;
-      delete this.result;
     });
 
     it('times out very easily', function () {
