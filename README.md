@@ -67,9 +67,8 @@ phantomjssmith.createImages(['img1.jpg', 'img2.png'], function handleImages (err
   canvas.addImage(imgs[1], 50, 100);
 
   // Export canvas to image
-  canvas['export']({format: 'png'}, function handleOuput (err, result) {
-    result; // Binary string representing a PNG image of the canvas
-  });
+  var resultStream = canvas['export']({format: 'png'});
+  resultStream; // Readable stream outputting PNG image of the canvas
 });
 ```
 
@@ -80,7 +79,7 @@ This module was built to the specification for spritesmith engines.
 
 https://github.com/twolfson/spritesmith-engine-spec/tree/2.0.0
 
-### `canvas.export(options, cb)`
+### `canvas.export(options)`
 Our `export` method provides support for the following options:
 
 - options `Object`
