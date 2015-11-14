@@ -33,12 +33,12 @@
   "dependencies": {
     "async": "~0.2.7",
     "buffered-spawn": "~1.1.2",
-    "concat-stream": "~1.5.1",
     "jpeg-js": "0.0.4",
     "ndarray": "~1.0.8",
     "obj-extend": "~0.1.0",
     "save-pixels": "~0.3.0",
     "temporary": "0.0.8",
+    "through2": "~2.0.0",
     "which": "~1.0.5"
   },
   "devDependencies": {
