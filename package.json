@@ -33,6 +33,7 @@
   "dependencies": {
     "async": "~0.2.7",
     "buffered-spawn": "~1.1.2",
+    "contentstream": "~1.0.0",
     "jpeg-js": "0.0.4",
     "ndarray": "~1.0.8",
     "obj-extend": "~0.1.0",
