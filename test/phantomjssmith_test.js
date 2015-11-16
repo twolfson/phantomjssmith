@@ -9,6 +9,10 @@ spritesmithEngineTest.run({
   engine: Phantomjssmith,
   engineName: 'phantomjssmith',
   tests: {
+    // Disable buffer/stream tests since they are warnings only and we don't use contents
+    renderPngBufferVinylCanvas: false,
+    renderPngStreamVinylCanvas: false,
+    // Disable GIF test as we don't support it currently
     renderGifCanvas: false
   }
 });
@@ -20,7 +24,7 @@ describe('phantomjssmith', function () {
     // Set up canvas for test case
     var multiplePngImages = spritesmithEngineTest.config.multiplePngImages;
     testUtils.createEngine(Phantomjssmith);
-    testUtils.interpretImages(multiplePngImages.filepaths);
+    testUtils.interpretStringImages(multiplePngImages.filepaths);
     testUtils._createCanvas(multiplePngImages.width, multiplePngImages.height);
     testUtils._addImages(multiplePngImages.coordinateArr);
 
@@ -61,7 +65,7 @@ describe('phantomjssmith', function () {
     // Set up canvas for test case
     var multiplePngImages = spritesmithEngineTest.config.multiplePngImages;
     testUtils.createEngine(Phantomjssmith);
-    testUtils.interpretImages(multiplePngImages.filepaths);
+    testUtils.interpretStringImages(multiplePngImages.filepaths);
     testUtils._createCanvas(multiplePngImages.width, multiplePngImages.height);
     testUtils._addImages(multiplePngImages.coordinateArr);
 
