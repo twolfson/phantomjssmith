@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+1.0.0 - Upgraded to `spritesmith-engine-spec@2.0.0`
+
 0.7.5 - Forgot to merge our branch
 
 0.7.4 - Added `specVersion` to repo and added `spritesmith-engine` to keywords
