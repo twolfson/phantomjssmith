@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+1.0.1 - Replaced Gittip with support me page
+
 1.0.0 - Upgraded to `spritesmith-engine-spec@2.0.0`
 
 0.7.5 - Forgot to merge our branch
