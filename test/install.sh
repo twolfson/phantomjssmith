@@ -6,7 +6,7 @@ set -x
 # If we are installing a non-official binary
 if [[ "$PHANTOMJS_VERSION" = "2.0.0" ]]; then
   # Uninstall current version
-  rm "$(which phantomjs)"
+  rm -f "$(which phantomjs)"
 
   # Download Travis CI's version
   wget "https://s3.amazonaws.com/travis-phantomjs/phantomjs-$PHANTOMJS_VERSION-ubuntu-12.04.tar.bz2"
@@ -16,7 +16,7 @@ if [[ "$PHANTOMJS_VERSION" = "2.0.0" ]]; then
 # Otherwise if we are installing not using the default Travis version
 elif [[ "$PHANTOMJS_VERSION" != "TRAVIS" ]]; then
   # Uninstall current version
-  rm "$(which phantomjs)"
+  rm -f "$(which phantomjs)"
 
   # Download our version from the internet
   # If we are at a pre-bitbucket version, use Google code
