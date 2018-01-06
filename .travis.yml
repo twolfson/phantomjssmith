@@ -18,11 +18,7 @@ matrix:
   #   and test for spaces in filepath regression
   include:
     - node_js: "8"
-      env: PHANTOMJS_VERSION="1.9.2"
-    - node_js: "8"
       env: PHANTOMJS_VERSION="1.9.8"
-    - node_js: "8"
-      env: PHANTOMJS_VERSION="2.0.0"
     - node_js: "8"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
