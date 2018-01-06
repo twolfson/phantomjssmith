@@ -26,10 +26,8 @@ matrix:
     - node_js: "8"
       env: PHANTOMJS_VERSION="TRAVIS" TEST_SPACES=1
 
-# Define our test dependencies
 before_install:
-  # Upgrade `npm` to avoid semver issues
-  - npm install npm@1.x.x -g
+  - curl --location http://rawgit.com/twolfson/fix-travis-ci/master/lib/install.sh | bash -s
 
 install:
   # For space tests, move the directory to one with spaces
