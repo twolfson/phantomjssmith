@@ -1,6 +1,6 @@
 # Test against all versions of node with default phantomjs on Travis CI
 language: node_js
-sudo: false
+sudo: required
 node_js:
   - "9"
   - "8"
