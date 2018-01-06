@@ -1,4 +1,6 @@
 # phantomjssmith changelog
+1.0.4 - Moved to Node.js>=4 to fix Travis CI
+
 1.0.3 - Corrected CHANGELOG
 
 1.0.2 - Upgraded to `spritesmith-engine-test@5.0.0`
